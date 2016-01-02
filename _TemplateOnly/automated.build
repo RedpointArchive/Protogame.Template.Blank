@@ -1,6 +1,6 @@
 #version 1
 
-pack template Template.tar.lzma Template
+pack . Template.tar.lzma Template
 if host Linux
   if file-exists /srv/api_key.txt
     push /srv/api_key.txt Template.tar.lzma http://protobuild.org/Protogame/Template.Blank $GIT_COMMIT Template $GIT_BRANCH --ignore-on-existing
