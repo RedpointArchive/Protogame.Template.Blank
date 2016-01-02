@@ -7,7 +7,7 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="protobuf-net" />
-    <Reference Include="Ninject" />
+    <Reference Include="Protoinject" />
     <Reference Include="MonoGame.Framework" />
     <Reference Include="Protogame" />
     <Reference Include="Protogame.ThirdParty" />

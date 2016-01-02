@@ -1,14 +1,19 @@
 namespace {PROJECT_SAFE_NAME}
 {
-    using Ninject;
+    using Protoinject;
 
     using Protogame;
 
-    public class {PROJECT_SAFE_NAME}Game : CoreGame<{PROJECT_SAFE_NAME}World, Default2DWorldManager>
+    public class {PROJECT_SAFE_NAME}Game : CoreGame<{PROJECT_SAFE_NAME}World>
     {
         public {PROJECT_SAFE_NAME}Game(StandardKernel kernel)
             : base(kernel)
         {
+        }
+
+        protected override void ConfigureRenderPipeline(IRenderPipeline pipeline, IKernel kernel)
+        {
+            pipeline.AddFixedRenderPass(kernel.Get<I2DBatchedRenderPass>());
         }
     }
 }

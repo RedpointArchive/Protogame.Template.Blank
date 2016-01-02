@@ -2,7 +2,7 @@
 
 namespace {PROJECT_SAFE_NAME}
 {
-    using Ninject;
+    using Protoinject;
 
     using Protogame;
 
@@ -11,7 +11,7 @@ namespace {PROJECT_SAFE_NAME}
         public static void Main(string[] args)
         {
             var kernel = new StandardKernel();
-            kernel.Load<Protogame2DIoCModule>();
+            kernel.Load<ProtogameCoreModule>();
             kernel.Load<ProtogameAssetIoCModule>();
             AssetManagerClient.AcceptArgumentsAndSetup<GameAssetManagerProvider>(kernel, args);
 

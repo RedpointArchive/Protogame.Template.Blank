@@ -17,7 +17,7 @@ namespace {PROJECT_SAFE_NAME}
     
     using Microsoft.Xna.Framework;
     
-    using Ninject;
+    using Protoinject;
     
     using Protogame;
   
@@ -35,7 +35,7 @@ namespace {PROJECT_SAFE_NAME}
             base.OnCreate(bundle);
 
             var kernel = new StandardKernel();
-            kernel.Load<Protogame2DIoCModule>();
+            kernel.Load<ProtogameCoreModule>();
             kernel.Load<ProtogameAssetIoCModule>();
             AssetManagerClient.AcceptArgumentsAndSetup<GameAssetManagerProvider>(kernel, null);
 
