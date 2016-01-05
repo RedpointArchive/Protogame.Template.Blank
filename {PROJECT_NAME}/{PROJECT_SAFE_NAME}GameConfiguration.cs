@@ -10,6 +10,7 @@ namespace {PROJECT_SAFE_NAME}
         {
             kernel.Load<ProtogameCoreModule>();
             kernel.Load<ProtogameAssetIoCModule>();
+            kernel.Load<{PROJECT_SAFE_NAME}Module>();
         }
 
         public void InitializeAssetManagerProvider(IAssetManagerProviderInitializer initializer)

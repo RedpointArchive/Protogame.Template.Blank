@@ -8,21 +8,35 @@ namespace {PROJECT_SAFE_NAME}
 
     public class {PROJECT_SAFE_NAME}World : IWorld
     {
-        private readonly I2DRenderUtilities m_2DRenderUtilities;
+        private readonly I2DRenderUtilities _renderUtilities;
 
-        private readonly IAssetManager m_AssetManager;
+        private readonly IAssetManager _assetManager;
 
-        private readonly FontAsset m_DefaultFont;
+        private readonly FontAsset _defaultFont;
         
         public {PROJECT_SAFE_NAME}World(
             I2DRenderUtilities twoDRenderUtilities,
-            IAssetManagerProvider assetManagerProvider)
+            IAssetManagerProvider assetManagerProvider,
+            IEntityFactory entityFactory)
         {
             this.Entities = new List<IEntity>();
 
-            this.m_2DRenderUtilities = twoDRenderUtilities;
-            this.m_AssetManager = assetManagerProvider.GetAssetManager();
-            this.m_DefaultFont = this.m_AssetManager.Get<FontAsset>("font.Default");
+            _renderUtilities = twoDRenderUtilities;
+            _assetManager = assetManagerProvider.GetAssetManager();
+            _defaultFont = this._assetManager.Get<FontAsset>("font.Default");
+
+            // You can also save the entity factory in a field and use it, e.g. in the Update
+            // loop or anywhere else in your game.
+            var entityA = entityFactory.CreateExampleEntity("EntityA");
+            entityA.X = 100;
+            entityA.Y = 50;
+            var entityB = entityFactory.CreateExampleEntity("EntityB");
+            entityB.X = 120;
+            entityB.Y = 100;
+
+            // Don't forget to add your entities to the world!
+            this.Entities.Add(entityA);
+            this.Entities.Add(entityB);
         }
 
         public IList<IEntity> Entities { get; private set; }
@@ -39,17 +53,17 @@ namespace {PROJECT_SAFE_NAME}
         {
             gameContext.Graphics.GraphicsDevice.Clear(Color.Purple);
 
-            this.m_2DRenderUtilities.RenderText(
+            this._renderUtilities.RenderText(
                 renderContext,
                 new Vector2(10, 10),
                 "Hello {PROJECT_NAME}!",
-                this.m_DefaultFont);
+                this._defaultFont);
 
-            this.m_2DRenderUtilities.RenderText(
+            this._renderUtilities.RenderText(
                 renderContext,
                 new Vector2(10, 30),
                 "Running at " + gameContext.FPS + " FPS; " + gameContext.FrameCount + " frames counted so far",
-                this.m_DefaultFont);
+                this._defaultFont);
         }
 
         public void Update(IGameContext gameContext, IUpdateContext updateContext)

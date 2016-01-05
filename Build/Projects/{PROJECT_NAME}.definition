@@ -15,8 +15,11 @@
     <Reference Include="{PROJECT_XML_NAME}.Content" />
   </References>
   <Files>
+    <Compile Include="IEntityFactory.cs" />
+    <Compile Include="ExampleEntity.cs" />
     <Compile Include="{PROJECT_SAFE_XML_NAME}Game.cs" />
     <Compile Include="{PROJECT_SAFE_XML_NAME}GameConfiguration.cs" />
+    <Compile Include="{PROJECT_SAFE_XML_NAME}Module.cs" />
     <Compile Include="{PROJECT_SAFE_XML_NAME}World.cs" />
     <Content Include="Properties\AndroidManifest.xml">
       <Platforms>Android,Ouya</Platforms>
