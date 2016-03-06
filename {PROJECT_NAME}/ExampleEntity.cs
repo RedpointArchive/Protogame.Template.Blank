@@ -27,7 +27,7 @@ namespace {PROJECT_SAFE_NAME}
             {
                 _renderUtilities.RenderText(
                     renderContext,
-                    new Vector2(this.X, this.Y),
+                    new Vector2(this.LocalMatrix.Translation.X, this.LocalMatrix.Translation.Y),
                     _name,
                     _defaultFont);
             }

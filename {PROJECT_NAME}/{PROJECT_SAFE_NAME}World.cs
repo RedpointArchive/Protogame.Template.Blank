@@ -4,6 +4,8 @@ namespace {PROJECT_SAFE_NAME}
 
     using Microsoft.Xna.Framework;
 
+    using Protoinject;
+
     using Protogame;
 
     public class {PROJECT_SAFE_NAME}World : IWorld
@@ -15,6 +17,8 @@ namespace {PROJECT_SAFE_NAME}
         private readonly FontAsset _defaultFont;
         
         public {PROJECT_SAFE_NAME}World(
+            INode worldNode,
+            IHierarchy hierarchy,
             I2DRenderUtilities twoDRenderUtilities,
             IAssetManagerProvider assetManagerProvider,
             IEntityFactory entityFactory)
@@ -28,15 +32,13 @@ namespace {PROJECT_SAFE_NAME}
             // You can also save the entity factory in a field and use it, e.g. in the Update
             // loop or anywhere else in your game.
             var entityA = entityFactory.CreateExampleEntity("EntityA");
-            entityA.X = 100;
-            entityA.Y = 50;
+            entityA.LocalMatrix = Matrix.CreateTranslation(100, 50, 0);
             var entityB = entityFactory.CreateExampleEntity("EntityB");
-            entityB.X = 120;
-            entityB.Y = 100;
+            entityB.LocalMatrix = Matrix.CreateTranslation(120, 100, 0);
 
             // Don't forget to add your entities to the world!
-            this.Entities.Add(entityA);
-            this.Entities.Add(entityB);
+            hierarchy.AddChildNode(worldNode, hierarchy.CreateNodeForObject(entityA));
+            hierarchy.AddChildNode(worldNode, hierarchy.CreateNodeForObject(entityB));
         }
 
         public IList<IEntity> Entities { get; private set; }
