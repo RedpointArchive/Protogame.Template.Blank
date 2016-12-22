@@ -1,4 +1,4 @@
-namespace {PROJECT_SAFE_NAME}
+namespace PROJECT_SAFE_NAME
 {
     using System.Collections.Generic;
 
@@ -8,7 +8,7 @@ namespace {PROJECT_SAFE_NAME}
 
     using Protogame;
 
-    public class {PROJECT_SAFE_NAME}World : IWorld
+    public class PROJECT_SAFE_NAMEWorld : IWorld
     {
         private readonly I2DRenderUtilities _renderUtilities;
 
@@ -16,7 +16,7 @@ namespace {PROJECT_SAFE_NAME}
 
         private readonly FontAsset _defaultFont;
         
-        public {PROJECT_SAFE_NAME}World(
+        public PROJECT_SAFE_NAMEWorld(
             INode worldNode,
             IHierarchy hierarchy,
             I2DRenderUtilities twoDRenderUtilities,
@@ -32,13 +32,13 @@ namespace {PROJECT_SAFE_NAME}
             // You can also save the entity factory in a field and use it, e.g. in the Update
             // loop or anywhere else in your game.
             var entityA = entityFactory.CreateExampleEntity("EntityA");
-            entityA.LocalMatrix = Matrix.CreateTranslation(100, 50, 0);
+            entityA.Transform.LocalPosition = new Vector3(100, 50, 0);
             var entityB = entityFactory.CreateExampleEntity("EntityB");
-            entityB.LocalMatrix = Matrix.CreateTranslation(120, 100, 0);
+            entityB.Transform.LocalPosition = new Vector3(120, 100, 0);
 
             // Don't forget to add your entities to the world!
-            hierarchy.AddChildNode(worldNode, hierarchy.CreateNodeForObject(entityA));
-            hierarchy.AddChildNode(worldNode, hierarchy.CreateNodeForObject(entityB));
+            hierarchy.MoveNode(worldNode, hierarchy.Lookup(entityA));
+            hierarchy.MoveNode(worldNode, hierarchy.Lookup(entityB));
         }
 
         public IList<IEntity> Entities { get; private set; }
@@ -58,7 +58,7 @@ namespace {PROJECT_SAFE_NAME}
             this._renderUtilities.RenderText(
                 renderContext,
                 new Vector2(10, 10),
-                "Hello {PROJECT_NAME}!",
+                "Hello PROJECT_NAME!",
                 this._defaultFont);
 
             this._renderUtilities.RenderText(

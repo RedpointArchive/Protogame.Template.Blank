@@ -1,9 +1,9 @@
 using System;
 using Protoinject;
 
-namespace {PROJECT_SAFE_NAME}
+namespace PROJECT_SAFE_NAME
 {
-    public class {PROJECT_SAFE_NAME}Module : IProtoinjectModule
+    public class PROJECT_SAFE_NAMEModule : IProtoinjectModule
     {
         public void Load(IKernel kernel)
         {

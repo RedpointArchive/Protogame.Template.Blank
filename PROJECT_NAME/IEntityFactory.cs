@@ -1,7 +1,7 @@
 using System;
 using Protoinject;
 
-namespace {PROJECT_SAFE_NAME}
+namespace PROJECT_SAFE_NAME
 {
     public interface IEntityFactory : IGenerateFactory
     {

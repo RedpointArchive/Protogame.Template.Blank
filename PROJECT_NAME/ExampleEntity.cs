@@ -2,7 +2,7 @@ using System;
 using Protogame;
 using Microsoft.Xna.Framework;
 
-namespace {PROJECT_SAFE_NAME}
+namespace PROJECT_SAFE_NAME
 {
     public class ExampleEntity : Entity
     {
@@ -27,7 +27,7 @@ namespace {PROJECT_SAFE_NAME}
             {
                 _renderUtilities.RenderText(
                     renderContext,
-                    new Vector2(this.LocalMatrix.Translation.X, this.LocalMatrix.Translation.Y),
+                    new Vector2(this.FinalTransform.AbsolutePosition.X, this.FinalTransform.AbsolutePosition.Y),
                     _name,
                     _defaultFont);
             }
