@@ -14,19 +14,19 @@ namespace PROJECT_SAFE_NAME
 
         private readonly IAssetManager _assetManager;
 
-        private readonly FontAsset _defaultFont;
+        private readonly IAssetReference<FontAsset> _defaultFont;
         
         public PROJECT_SAFE_NAMEWorld(
             INode worldNode,
             IHierarchy hierarchy,
             I2DRenderUtilities twoDRenderUtilities,
-            IAssetManagerProvider assetManagerProvider,
+            IAssetManager assetManager,
             IEntityFactory entityFactory)
         {
             this.Entities = new List<IEntity>();
 
             _renderUtilities = twoDRenderUtilities;
-            _assetManager = assetManagerProvider.GetAssetManager();
+            _assetManager = assetManager;
             _defaultFont = this._assetManager.Get<FontAsset>("font.Default");
 
             // You can also save the entity factory in a field and use it, e.g. in the Update

@@ -10,13 +10,13 @@ namespace PROJECT_SAFE_NAME
 
         private readonly I2DRenderUtilities _renderUtilities;
 
-        private readonly FontAsset _defaultFont;
+        private readonly IAssetReference<FontAsset> _defaultFont;
 
-        public ExampleEntity(I2DRenderUtilities renderUtilities, IAssetManagerProvider assetManagerProvider, string name)
+        public ExampleEntity(I2DRenderUtilities renderUtilities, IAssetManager assetManager, string name)
         {
             _renderUtilities = renderUtilities;
             _name = name;
-            _defaultFont = assetManagerProvider.GetAssetManager().Get<FontAsset>("font.Default");
+            _defaultFont = assetManager.Get<FontAsset>("font.Default");
         }
 
         public override void Render(IGameContext gameContext, IRenderContext renderContext)
