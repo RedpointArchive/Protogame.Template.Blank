@@ -1,5 +1,1 @@
-This is the location where you would place your raw asset files, such
-as PNG assets.  When you run the asset manager next to the game, it will
-edit the files in this folder whenever you create or update new assets.
-
-You should remove this readme once you have added your first asset.
+This is the location where you store source assets, such as PNG files and other content.  If you are targeting non-desktop platforms, you must run compile.bat to compile assets.

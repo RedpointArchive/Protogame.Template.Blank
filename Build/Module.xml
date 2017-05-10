@@ -2,10 +2,11 @@
 <Module>
   <Name>Protogame.Template.Blank</Name>
   <Authors>Redpoint Games</Authors>
-  <SemanticVersion>1.0.2</SemanticVersion>
+  <SemanticVersion>1.0.3</SemanticVersion>
   <Description>This template provides an empty Protogame project.  This package can only be used with Protobuild.</Description>
   <LicenseUrl>https://opensource.org/licenses/MIT</LicenseUrl>
   <ProjectUrl>https://protogame.org/</ProjectUrl>
+  <IconUrl>https://raw.githubusercontent.com/RedpointGames/Protogame.Template.Blank/master/icon.png</IconUrl>
   <GitRepositoryUrl>https://github.com/RedpointGames/Protogame.Template.Blank</GitRepositoryUrl>
   <DefaultAction>resync</DefaultAction>
   <GenerateNuGetRepositories>true</GenerateNuGetRepositories>
