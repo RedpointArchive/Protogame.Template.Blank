@@ -53,7 +53,7 @@ namespace PROJECT_SAFE_NAME
 
         public void RenderBelow(IGameContext gameContext, IRenderContext renderContext)
         {
-            gameContext.Graphics.GraphicsDevice.Clear(Color.Purple);
+            renderContext.GraphicsDevice.Clear(Color.Purple);
 
             this._renderUtilities.RenderText(
                 renderContext,
