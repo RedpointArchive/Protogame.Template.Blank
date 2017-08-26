@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Name="PROJECT_NAME" Path="PROJECT_NAME" Type="App">
   <References>
     <Reference Include="System" />
@@ -15,13 +15,30 @@
     <Reference Include="Protogame.EntryPoint" />
     <Reference Include="PROJECT_NAME.Content" />
   </References>
+  <Properties>
+    <FrameworkVersions>
+      <Platform Name="Windows8">
+        <Version>v4.5.1</Version>
+      </Platform>
+      <Platform Name="Android">
+        <Version>v4.4</Version>
+      </Platform>
+    </FrameworkVersions>
+  </Properties>
   <Files>
-    <Compile Include="IEntityFactory.cs" />
+    <AndroidResource Include="Resources\drawable\background.png" />
+    <AndroidResource Include="Resources\drawable\icon.png" />
+    <AndroidResource Include="Resources\values\styles.xml" />
+    <AndroidResource Include="Resources\values\values.xml" />
     <Compile Include="ExampleEntity.cs" />
+    <Compile Include="IEntityFactory.cs" />
     <Compile Include="PROJECT_SAFE_NAMEGame.cs" />
     <Compile Include="PROJECT_SAFE_NAMEGameConfiguration.cs" />
     <Compile Include="PROJECT_SAFE_NAMEModule.cs" />
     <Compile Include="PROJECT_SAFE_NAMEWorld.cs" />
+    <Compile Include="Resources\Resource.Designer.cs">
+      <Platforms>Android,Ouya</Platforms>
+    </Compile>
     <Content Include="Properties\AndroidManifest.xml">
       <Platforms>Android,Ouya</Platforms>
     </Content>
