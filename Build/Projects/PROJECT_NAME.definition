@@ -26,10 +26,18 @@
     </FrameworkVersions>
   </Properties>
   <Files>
-    <AndroidResource Include="Resources\drawable\background.png" />
-    <AndroidResource Include="Resources\drawable\icon.png" />
-    <AndroidResource Include="Resources\values\styles.xml" />
-    <AndroidResource Include="Resources\values\values.xml" />
+    <AndroidResource Include="Resources\drawable\background.png">
+      <Platforms>Android,Ouya</Platforms>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\icon.png">
+      <Platforms>Android,Ouya</Platforms>
+    </AndroidResource>
+    <AndroidResource Include="Resources\values\styles.xml">
+      <Platforms>Android,Ouya</Platforms>
+    </AndroidResource>
+    <AndroidResource Include="Resources\values\values.xml">
+      <Platforms>Android,Ouya</Platforms>
+    </AndroidResource>
     <Compile Include="ExampleEntity.cs" />
     <Compile Include="IEntityFactory.cs" />
     <Compile Include="PROJECT_SAFE_NAMEGame.cs" />
